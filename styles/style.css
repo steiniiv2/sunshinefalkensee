@@ -69,8 +69,8 @@ section {
 
 
 .bild1 {
-    display: center;
-    justify-content: flex-start;
-    align-items: flex-end;
-    margin-right: 50px;
+    display: contents;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
 }

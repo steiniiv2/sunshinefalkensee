@@ -67,10 +67,10 @@ section {
 }
 
 .bild1 {
-    display: flex;
+    display: center;
     justify-content: left;
     align-items: left;
-    margin-left: 400px;
+    margin-left: -250px;
     text-align: center;
 
 

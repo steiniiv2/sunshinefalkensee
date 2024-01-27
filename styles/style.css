@@ -54,6 +54,7 @@ main {
 
 section {
     margin-bottom: 2em;
+    text-align: center;
 }
 
     footer {
@@ -66,14 +67,12 @@ section {
     width: 100%;
 }
 
+
 .bild1 {
     display: center;
     justify-content: left;
     align-items: left;
     margin-left: -250px;
-    text-align: center;
-
-
 }
 
 

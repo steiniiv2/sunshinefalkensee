@@ -69,7 +69,7 @@ section {
 
 
 .bild1 {
-    display: center;
+    display: flex;
     justify-content: left;
     align-items: center;
 }

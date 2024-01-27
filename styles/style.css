@@ -72,4 +72,5 @@ section {
     display: center;
     justify-content: flex-start;
     align-items: flex-end;
+    margin-left: 50px;
 }

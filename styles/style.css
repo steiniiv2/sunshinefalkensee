@@ -66,5 +66,15 @@ section {
     width: 100%;
 }
 
+.bild1 {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    margin-left: 400px;
+    text-align: center;
+
+
+}
+
 
 

@@ -70,6 +70,6 @@ section {
 
 .bild1 {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
 }

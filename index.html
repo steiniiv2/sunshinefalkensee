@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cookies Popup</title>
+    </head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Sunshine Falkensee</title>
     <link rel="stylesheet" href="./styles/style.css">
 </head>
+
+<body>
+
+    <div class="cookies-popup">
+        <p>Um Ihnen ein bestmögliches Online-Erlebnis zu bieten, verwenden wir Cookies. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu.</p>
+        <button onclick="acceptCookies()">Cookies akzeptieren</button>
+        <button onclick="rejectCookies()">Cookies ablehnen</button>
+        <a href="#privacy-policy">Datenschutzerklärung anzeigen</a>
+    </div>
+    
+    <!-- Datenschutzerklärung -->
+    <div id="privacy-policy" style="display: none;">
+        <h2>Datenschutzerklärung</h2>
+        <p>Hier steht Ihre Datenschutzerklärung...</p>
+    </div>
+    
+    <script>
+        function acceptCookies() {
+            // Setze Cookie-Zustimmung
+            document.cookie = "cookies_accepted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+    
+            // Schließe das Popup
+            document.querySelector('.cookies-popup').style.display = 'none';
+        }
+    
+        function rejectCookies() {
+            // Lösche Cookie-Zustimmung
+            document.cookie = "cookies_accepted=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+    
+            // Schließe das Popup
+            document.querySelector('.cookies-popup').style.display = 'none';
+        }
+    
+        // Überprüfe, ob der Benutzer bereits zugestimmt oder abgelehnt hat
+        function checkCookieConsent() {
+            var cookiesAccepted = document.cookie.indexOf("cookies_accepted=true") !== -1;
+            var cookiesRejected = document.cookie.indexOf("cookies_accepted=false") !== -1;
+    
+            if (!cookiesAccepted && !cookiesRejected) {
+                // Zeige das Popup, wenn der Benutzer noch nicht zugestimmt oder abgelehnt hat
+                document.querySelector('.cookies-popup').style.display = 'block';
+            }
+        }
+    
+        // Überprüfe Cookie-Zustimmung/-ablehnung beim Laden der Seite
+        window.onload = checkCookieConsent;
+    </script>
+    
+    </body>
+
 <body>
 
     <header>

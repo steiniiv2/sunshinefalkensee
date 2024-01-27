@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookies Popup</title>
+<style>
+    .cookies-popup {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f0f0f0;
+        padding: 10px 20px;
+        text-align: center;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+    .cookies-popup button {
+        margin-left: 20px;
+        padding: 5px 15px;
+        border: none;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+
+<div class="cookies-popup">
+    <p>Um Ihnen ein bestmögliches Online-Erlebnis zu bieten, verwenden wir Cookies. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu.</p>
+    <button onclick="acceptCookies()">Cookies akzeptieren</button>
+    <a href="#privacy-policy">Datenschutzerklärung anzeigen</a>
+</div>
+
+<!-- Datenschutzerklärung -->
+<div id="privacy-policy" style="display: none;">
+    <h2>Datenschutzerklärung</h2>
+    <p>Hier steht Ihre Datenschutzerklärung...</p>
+</div>
+
+<script>
+    function acceptCookies() {
+        // Setze Cookie-Zustimmung
+        document.cookie = "cookies_accepted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+
+        // Schließe das Popup
+        document.querySelector('.cookies-popup').style.display = 'none';
+    }
+
+    // Überprüfe, ob der Benutzer bereits zugestimmt hat
+    function checkCookieConsent() {
+        var cookiesAccepted = document.cookie.indexOf("cookies_accepted=") !== -1;
+
+        if (!cookiesAccepted) {
+            // Zeige das Popup, wenn der Benutzer noch nicht zugestimmt hat
+            document.querySelector('.cookies-popup').style.display = 'block';
+        }
+    }
+
+    // Überprüfe Cookie-Zustimmung beim Laden der Seite
+    window.onload = checkCookieConsent;
+</script>
+
+</body>
+</html>
